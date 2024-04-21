@@ -17,12 +17,15 @@ class TestOperaciones(unittest.TestCase):
         self.assertEqual(mult(3,2),6)
         self.assertEqual(mult(-1,1),-1)
         self.assertEqual(mult(-1,-1),1)
+        self.assertEqual(mult(5,0),0)
 
     def test_div(self):
         self.assertEqual(div(4,2),2)
         self.assertEqual(div(-1,1),-1)
         self.assertEqual(div(-1,-1),1)
         self.assertEqual(div(0,4),0)
+        with self.assertRaises(ZeroDivisionError):
+            div(5, 0)
 
 
 if __name__ == "__main__":
